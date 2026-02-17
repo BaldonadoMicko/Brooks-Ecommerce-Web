@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login & Sign Up</title>
+    <link rel="icon" type="png" href="images/logo active.gif" />
+    <link rel="stylesheet" type="text/css" href="login_index.css" />
+  </head>
+  <body>
+    <section>
+      <div class="navbar">
+        <a href="main_index.html">Back to Home</a>
+      </div>
+    </section>
+
+    <video autoplay loop muted>
+      <source src="images/moving.mov" type="video/mp4" />
+    </video>
+
+    <div class="form-container" id="login-form">
+      <h2>Login</h2>
+      <form action="#" method="post" id="login">
+        <label for="login-username">Username:</label>
+        <input type="text" id="login-username" name="login-username" required />
+
+        <label for="login-password">Password:</label>
+        <input
+          type="password"
+          id="login-password"
+          name="login-password"
+          required
+        />
+
+        <button type="submit">Login</button>
+        <p>
+          Don't have an account yet? <a href="#" id="signup-link">Sign Up</a>
+        </p>
+      </form>
+    </div>
+
+    <div class="form-container" id="signup-form" style="display: none">
+      <h2>Sign Up</h2>
+      <form action="#" method="post" id="signup">
+        <label for="signup-username">Username:</label>
+        <input
+          type="text"
+          id="signup-username"
+          name="signup-username"
+          required
+        />
+
+        <label for="signup-email">Email</label>
+        <input type="email" id="signup-email" name="signup-email" required />
+
+        <label for="signup-password">Password:</label>
+        <input
+          type="password"
+          id="signup-password"
+          name="signup-password"
+          required
+        />
+
+        <label for="signup-confirm-password">Confirm Password:</label>
+        <input
+          type="password"
+          id="signup-confirm-password"
+          name="signup-confirm-password"
+          required
+        />
+
+        <button type="submit">Sign Up</button>
+        <p>Already a user? <a href="#" id="login-link">Login</a></p>
+      </form>
+    </div>
+
+    <script>
+      document
+        .getElementById("signup-link")
+        .addEventListener("click", function (event) {
+          event.preventDefault();
+          document.getElementById("login-form").style.display = "none";
+          document.getElementById("signup-form").style.display = "block";
+        });
+
+      document
+        .getElementById("login-link")
+        .addEventListener("click", function (event) {
+          event.preventDefault();
+          document.getElementById("signup-form").style.display = "none";
+          document.getElementById("login-form").style.display = "block";
+        });
+    </script>
+  </body>
+</html>
